@@ -1,0 +1,86 @@
+/* Melody Build based on TSW Flexed CSS
+Author:      Tradesouthwest
+Author URI:  https://tradesouthwest.com/
+Description: Minimal size style sheet for flexed based projects. Has navigation up to three levels depth.
+Version:     1.0.0
+License:     GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Demo:        http://tswdev.com/public/twothreefour.html
+
+== Contents ==
+1. - DOM Elements
+2. - Media Queries
+============== */
+
+/* ************************************************** 1. - DOM Elements
+*/
+[class^="mldyflx-"]{
+    box-sizing: border-box;
+	display: flex;
+}
+label + input,
+label + textarea,
+label + select {
+	display: flex;
+	flex-direction: column;
+}
+label {
+	display: flex;
+	margin-bottom: 8px;
+}
+.mldyflx-row {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+}
+.mldyflx-wide, 
+.mldyflx-thirds, 
+.mldyflx-thirds.joined, 
+.mldyflx-half, 
+.mldyflx-wide, 
+.mldyflx-quarters {
+	margin-bottom: 1em;
+	display: inherit;
+	margin-left: auto;
+	margin-right: auto;
+}
+.mldyflx-row.wide:last-child {
+	margin-top: 0;
+}
+
+/* ************************************************** 2. - Media Queries
+*/
+@media screen and ( min-width: 300px ) and ( max-width: 767px ) {
+	.mldyflx-row {
+	    width: 100%;
+		flex-direction: column; 
+	}
+	.mldyflx-wide, 
+	.mldyflx-half,
+	.mldyflx-thirds, 
+	.mldyflx-thirds.joined,
+	.mldyflx-quarters {
+		margin-right: .5em;
+		width: calc( 100% - .25em );
+	}
+}
+@media screen and (min-width: 768px) {
+	.mldyflx-row {
+		flex-direction: row;
+	}
+	.mldyflx-wide {
+		width: calc( 100% - .5em );
+	}
+	.mldyflx-half {
+		width: calc( 50% - .5em );
+	}
+	.mldyflx-thirds {
+		width: calc( 33.3333% - .5em );
+	}
+	.mldyflx-thirds.joined {
+		width: calc( 66.6666% - .5em );
+	}
+	.mldyflx-quarters {
+		width: calc( 25% - .5em );
+	}
+}
