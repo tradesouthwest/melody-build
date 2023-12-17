@@ -1,5 +1,5 @@
 <?php
-namespace Mixmat_Build;
+namespace Melody_Build;
 /**
  * The plugin bootstrap file
  *

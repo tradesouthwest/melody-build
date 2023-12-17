@@ -152,10 +152,6 @@ class Admin_Code {
             $this->version, 
             'all' 
         );
-
-		$css_src = includes_url('css/') . 'editor.css';
-        wp_register_style('tinymce_css', $css_src);
-        wp_enqueue_style( 'tinymce_css' );
 	}
 
 	/**
@@ -228,7 +224,7 @@ class Admin_Code {
      */
     public function add_menu() {
         add_menu_page(
-            __( 'Melody Build settings', $this->domain ),
+            __( 'Melody Build Settings', $this->domain ),
             __( 'Melody Build', $this->domain ),
             'manage_options',
             'melody-build-options',
@@ -353,24 +349,24 @@ class Admin_Code {
 
         // This is where the settings are created...
 
-        $this->settings['mixmat_color_field_0'] = array(
+        $this->settings['mldybld_color_field_0'] = array(
             'section' => 'general',
             'title'   => __( 'Select Background Color', $this->domain ),
             'desc'    => '',
             'type'    => 'color',
             'std'     => '#ffffff',
-			'cssid'   => 'mixmat_color'
+			'cssid'   => 'mldybld_color'
         );
-        $this->settings['mixmat_color_field_1'] = array(
+        $this->settings['mldybld_color_field_1'] = array(
             'section' => 'general',
             'title'   => __( 'Select BoxShadow Color', $this->domain ),
             'desc'    => '',
             'type'    => 'color',
             'std'     => '#cccccc',
-			'cssid'   => 'mixmat_shado'
+			'cssid'   => 'mldybld_shado'
         );
-        // mixmat_theme_adjustment_option
-        $this->settings['mixmat_theme_margins_option'] = array(
+        // mldybld_theme_adjustment_option
+        $this->settings['mldybld_theme_margins_option'] = array(
             'section' => 'general',
             'title'   => __( 'Alternate Margins', $this->domain ),
             'desc'    => ' Adjustment (in pxs) to make less or more space between boxes.',
@@ -380,7 +376,7 @@ class Admin_Code {
             'max'     => '120',
             'step'    => 1
         );
-        $this->settings['mixmat_theme_adjustment_option'] = array(
+        $this->settings['mldybld_theme_adjustment_option'] = array(
             'section' => 'general',
             'title'   => __( 'Alternate Theme Adjustment', $this->domain ),
             'desc'    => __( 'Some themes may render the four box width ([one_fourth]) too thin. Try this to make them two wide.', $this->domain ),
