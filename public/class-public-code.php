@@ -121,9 +121,14 @@ class Public_Code {
 
 		$options      = get_option( 'melody_build_options' );
 		$mldybldcolor = empty($options['mldybld_color_field_0']) 
-					? '' : $options['mldybld_color_field_0'];
+					   ? '' : $options['mldybld_color_field_0'];
 		$mldybldshado = empty($options['mldybld_color_field_1']) 
-					? '' : $options['mldybld_color_field_1'];
+					   ? '' : $options['mldybld_color_field_1'];
+		$mlbd_marg    =	empty($options['mldybld_theme_margins_option']) 
+					   ? '' : $options['mldybld_theme_margins_option'];
+		$mlbdchk      = (empty($options['mldybld_theme_adjustment_option']) )
+					    ? 0 : $options['mldybld_theme_adjustment_option'];
+	
 		$style = '';
 
 		ob_start();
@@ -141,12 +146,19 @@ class Public_Code {
 			echo 'background: transparent;';
 		endif; 
 		if( !empty ( $mldybldshado ) ) : 
-			echo 'box-shadow: 0 0 3px 1px ' . $mldybldshado . ';';
+			echo 'box-shadow: 0 0 2px 1px ' . $mldybldshado . ';';
 			else : 
 			echo 'box-shadow: none;';
 		endif; 
-
 		echo '}';
+
+		if ( $mlbdchk ) :  
+			echo '@media screen and (min-width: 300px) and (max-width: 768px){
+			.mldyflx-quarters{width: calc( 50% - .5em );}}';
+		endif;
+		if ( $mlbd_marg  > 0 ) : 
+			echo '.mldyflx-row{ margin-top: ' . $mlbd_marg . 'px; }';
+		endif;
 
 		$styles = ob_get_clean();
 		

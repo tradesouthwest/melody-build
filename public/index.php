@@ -1,1 +1,1 @@
-// Live Long and Prosper
+<?php // Live Long and Prosper

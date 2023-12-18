@@ -1,5 +1,6 @@
 <?php
 namespace Melody_Build;
+
 /**
  * The admin-specific functionality of the plugin.
  *
@@ -9,16 +10,7 @@ namespace Melody_Build;
  * @package    Melody_Build
  * @subpackage Melody_Build/admin
  */
-/**
- * The admin-specific functionality of the plugin.
- *
- * Defines the plugin name, version, and two examples hooks for how to
- * enqueue the admin-specific stylesheet and JavaScript.
- *
- * @package    Melody_Build
- * @subpackage Melody_Build/admin
- * @author     flex
- */
+
 class Admin_Code {
 
 	/**
@@ -369,9 +361,9 @@ class Admin_Code {
         $this->settings['mldybld_theme_margins_option'] = array(
             'section' => 'general',
             'title'   => __( 'Alternate Margins', $this->domain ),
-            'desc'    => ' Adjustment (in pxs) to make less or more space between boxes.',
+            'desc'    => ' Adjustment (in pxs) to make less or more space between boxes. Try: 30',
             'type'    => 'number',
-            'std'     => '',
+            'std'     => '0',
             'min'     => '-30',
             'max'     => '120',
             'step'    => 1
@@ -379,7 +371,7 @@ class Admin_Code {
         $this->settings['mldybld_theme_adjustment_option'] = array(
             'section' => 'general',
             'title'   => __( 'Alternate Theme Adjustment', $this->domain ),
-            'desc'    => __( 'Some themes may render the four box width ([one_fourth]) too thin. Try this to make them two wide.', $this->domain ),
+            'desc'    => __( 'Some themes may render the four box width (`mldyflx-quarters`) squeezed and hard to read. Try this to make them two wide.', $this->domain ),
             'type'    => 'checkbox',
             'std'     => 1 
         );
